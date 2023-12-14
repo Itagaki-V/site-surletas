@@ -77,3 +77,21 @@ body {
   color: white !important;
   background-color: #3b5998;
 }
+
+
+/*---------------------------------*/
+
+#button-Next {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}

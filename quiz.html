@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUR LE TAS</title>
+
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Style personnalisé -->
+    <style>
+        /* Couleurs */
+        :root {
+            --bleu-futuriste: #007BFF;
+            --gris-clair: #F8F9FA;
+            --gris-sombre: #343A40;
+            --vert-technologique: #28A745;
+            --orange-innovation: #FD7E14;
+            --black: #FFFF;
+        }
+
+        /* Typographie */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: var(--black);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-sombre);
+            background-color: var(--gris-clair);
+        }
+
+        a {
+            color: var(--bleu-futuriste);
+        }
+
+        a:hover {
+            color: var(--vert-technologique);
+        }
+
+        /* Autres styles personnalisés */
+        .btn-primary {
+            background-color: var(--bleu-futuriste);
+            border-color: var(--bleu-futuriste);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--vert-technologique);
+            border-color: var(--vert-technologique);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- En-tête -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <<a class="navbar-brand" href="#">
+    <img src="logo1.png" alt="Logo de SUR LE TAS" class="img-fluid logo">
+  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Événements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Partenariats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Médias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!---------- quiz---------->
+
+
+<center><h1>Quiz</h1>
+
+
+<form id="quizForm" onsubmit="return false;">
+
+    <!-- Questions du quiz -->
+    <div id="question1" class="question"  data-answer="b">
+        <h3>1. Quel est le point fort de la décentralisation dans différents domaines, y compris la technologie ?</h3>
+        <input type="radio" name="qà" value="a"> a) Concentration des pouvoirs<br>
+        <input type="radio" name="q1" value="b"> b) Répartition du pouvoir<br>
+        <input type="radio" name="q1" value="c"> c) Centralisation des responsabilités
+        <br><br>
+        <button onclick="nextQuestion(1)">Suivant</button>
+    </div>
+
+    <div id="question2" class="question"  data-answer="a" style="display: none;">
+        <h3>2. Comment la décentralisation réduit-elle les risques liés à la défaillance d'un appareil dans un réseau informatique ? </h3>
+        <input type="radio" name="q2" value="a"> a) En ignorant les défaillances <br>
+        <input type="radio" name="q2" value="b"> b) En augmentant la dépendance sur un seul appareil<br>
+        <input type="radio" name="q2" value="c"> c) En permettant aux autres appareils de continuer à fonctionner normalement
+        <br><br>
+        <button onclick="nextQuestion(2)">Suivant</button>
+    </div>
+
+        <div id="question3" class="question"  data-answer="c" style="display: none;">
+        <h3>3. Dans quel contexte un réseau Pair-à-Pair (P2P) fonctionne-t-il sans avoir besoin d'un serveur central ? </h3>
+        <input type="radio" name="q3" value="a"> a) Réseau centralisé <br>
+        <input type="radio" name="q3" value="b"> b) Réseau distribué <br>
+        <input type="radio" name="q3" value="c"> c) Réseau P2P
+        <br><br>
+        <button onclick="nextQuestion(3)">Suivant</button>
+    </div>
+
+        <div id="question4" class="question"  data-answer="c" style="display: none;">
+        <h3>4. Quel avantage la décentralisation offre-t-elle en termes de transparence dans un réseau ? </h3>
+        <input type="radio" name="q4" value="a"> a) Dépendance totale des appareils<br>
+        <input type="radio" name="q4" value="b"> b) Continuité du réseau malgré la défaillance d'un appareil<br>
+        <input type="radio" name="q4" value="c"> c) Diminution de la capacité du réseau
+        <br><br>
+        <button onclick="nextQuestion(4)">Suivant</button>
+    </div>
+
+    <div id="question5" class="question"  data-answer="b" style="display: none;">
+        <h3>5. Comment la distribution des données se réinvente-t-elle dans le contexte d'un réseau P2P ?  </h3>
+        <input type="radio" name="q5" value="a"> a) Distribution inégale du pouvoir <br>
+        <input type="radio" name="q5" value="b"> b) Accessibilité égale des informations à tous les participants <br>
+        <input type="radio" name="q5" value="c"> c) Restriction de l'accès aux informations
+        <br><br>
+        <button onclick="nextQuestion(5)">Suivant</button>
+    </div>
+
+    <div id="question6" class="question"  data-answer="a" style="display: none;">
+        <h3>6. Comment fonctionne le partage direct dans un réseau P2P ?   </h3>
+        <input type="radio" name="q6" value="a"> a) Chaque appareil peut partager directement avec d'autres appareils <br>
+        <input type="radio" name="q6" value="b"> b) En demandant à un grand magasin<br>
+        <input type="radio" name="q6" value="c"> c) A travers un serveur central
+        <br><br>
+        <button onclick="nextQuestion(6)">Suivant</button>
+    </div>
+
+    <div id="question7" class="question"  data-answer="c" style="display: none;">
+        <h3>7. Qu'est-ce que le consensus dans un système distribué garantit-il ?    </h3>
+        <input type="radio" name="q7" value="a"> a) La concentration des décisions   <br>
+        <input type="radio" name="q7" value="b"> b) La dépendance à une autorité centrale<br>
+        <input type="radio" name="q7" value="c"> c) L'accord collectif sur l'état du système
+        <br><br>
+        <button onclick="nextQuestion(7)">Suivant</button>
+    </div>
+
+     <div id="question8" class="question"  data-answer="b" style="display: none;">
+        <h3>8. Comment le consensus prévient-il les fraudes dans un réseau décentralisé ?    </h3>
+        <input type="radio" name="q8" value="a"> a) En facilitant la manipulation des données par un nœud malveillant <br>
+        <input type="radio" name="q8" value="b"> b) En résistant aux attaques malveillantes<br>
+        <input type="radio" name="q8" value="c"> c) En ignorant les décisions collectives
+        <br><br>
+        <button onclick="nextQuestion(8)">Suivant</button>
+    </div>
+
+     <div id="question9" class="question"  data-answer="a" style="display: none;">
+        <h3>9. Quelle est la fonction de proposition dans le processus de consensus ?    </h3>
+        <input type="radio" name="q9" value="a"> a) Soumission d'une action ou d'une mise à jour du système   <br>
+        <input type="radio" name="q9" value="b"> b) Vérification de la validité de la proposition<br>
+        <input type="radio" name="q9" value="c"> c) Accord majoritaire sur la proposition
+        <br><br>
+        <button onclick="nextQuestion(9)">Suivant</button>
+    </div>
+
+    <!-- Ajoutez d'autres questions ici si besoin-->
+
+    <div id="question10" class="question" data-answer="c" style="display: none;">
+        
+        <h3>10. Pourquoi la distribution des décisions dans la décentralisation rend-elle plus difficile pour les acteurs malveillants de compromettre le système ?</h3>
+        <input type="radio" name="q10" value="a"> a) Facilité d'atteinte de l'autorité centrale<br>
+        <input type="radio" name="q10" value="b"> b) Distribution inégale du pouvoir<br>
+        <input type="radio" name="q10" value="c"> c) Résistance aux attaques malveillantes
+        <br><br>
+        <button onclick="nextQuestion(10)">Résultat</button>
+    </div></center> 
+
+</form>
+
+<!-- Résultats du quiz -->
+<center><div id="result" style="display: none;">
+    <h3>Résultats</h3>
+    <p id="score"></p></center>
+</div>
+
+<script>
+
+// Partie logique du quiz
+let currentQuestion = 1;
+let score = 0;
+
+function nextQuestion(questionNumber) {
+    const selectedOption = document.querySelector('input[name="q' + questionNumber + '"]:checked');
+    if (selectedOption) {
+        const correctAnswer = document.getElementById('question' + questionNumber).getAttribute('data-answer');
+        
+        if (selectedOption.value === correctAnswer) {
+            score++;
+        }
+
+        document.getElementById('question' + questionNumber).style.display = 'none';
+
+        currentQuestion++;
+        const nextQuestionElement = document.getElementById('question' + currentQuestion);
+        if (nextQuestionElement) {
+            nextQuestionElement.style.display = 'block';
+        } else {
+            showResults();
+        }
+    } else {
+        alert("Veuillez sélectionner une réponse.");
+    }
+}
+
+function showResults() {
+    // Affichage des résultats
+    const resultElement = document.getElementById('result');
+    const scoreElement = document.getElementById('score');
+    scoreElement.innerHTML = 'Votre score est de ' + score + ' sur 10.';
+    resultElement.style.display = 'block';
+}
+
+</script>
+
+</body>
+<!---------- quiz---------->
+
+
+
+    <!-- Bannière principale -->
+  <header>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="headerVideo">
+        <source src="animationSLT.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay text-center">
+       
+        <a href="#" class="btn btn-primary">Rejoignez-nous</a>
+    </div>
+</header>
+
+<!--Boutton qui revient a la page précedente-->
+    <a href="pagevierge.html">
+<button id="#button-Next">Revenir à la page précedente</button>
+    </a>
+<!--Boutton qui revient a la page précedente-->    
+
+
+  <!-- Page Content -->
+<div class="container">
+<br>
+ c'est ici que e contenu de votre page
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<!-- /.container -->
+
+
+
+    <!-- Pied de page -->
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>&copy; 2023 SUR LE TAS. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Inclure Bootstrap JS et jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

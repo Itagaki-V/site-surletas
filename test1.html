@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUR LE TAS</title>
+
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Style personnalisé -->
+    <style>
+        /* Couleurs */
+        :root {
+            --bleu-futuriste: #007BFF;
+            --gris-clair: #F8F9FA;
+            --gris-sombre: #343A40;
+            --vert-technologique: #28A745;
+            --orange-innovation: #FD7E14;
+            --black: #FFFF;
+        }
+
+        /* Typographie */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: var(--black);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-sombre);
+            background-color: var(--gris-clair);
+        }
+
+        a {
+            color: var(--bleu-futuriste);
+        }
+
+        a:hover {
+            color: var(--vert-technologique);
+        }
+
+        /* Autres styles personnalisés */
+        .btn-primary {
+            background-color: var(--bleu-futuriste);
+            border-color: var(--bleu-futuriste);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--vert-technologique);
+            border-color: var(--vert-technologique);
+        }
+    </style>
+
+
+<body>
+
+    <!-- En-tête -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <<a class="navbar-brand" href="#">
+    <img src="logo1.png" alt="Logo de SUR LE TAS" class="img-fluid logo">
+  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Événements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Partenariats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Médias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+<center><h1>Quiz</h1></center>
+
+<!-- Container pour afficher la question -->
+    <div id="questionContainer"></div>
+
+    <!-- Container pour afficher les options -->
+    <div id="optionsContainer"></div>
+
+    <!-- Bouton pour passer à la question suivante -->
+    <button onclick="afficherQuestionSuivante()">Question suivante</button>
+
+    <!-- Score -->
+    <p id="score">Score : 0</p>
+
+
+
+    <script>
+
+       
+        var questions = [
+            {
+                question: "Quel est le point fort de la décentralisation dans différents domaines, y compris la technologie ?",
+                options: ["Concentration des pouvoirs", "Répartition du pouvoir", "Centralisation des responsabilités"],
+                reponse: "Répartition du pouvoir"
+            },
+            {
+                question: "Comment la décentralisation réduit-elle les risques liés à la défaillance d'un appareil dans un réseau informatique ?",
+                options: ["En ignorant les défaillances", "En augmentant la dépendance sur un seul appareil", "En permettant aux autres appareils de continuer à fonctionner normalement"],
+                reponse: "En ignorant les défaillances"
+            },
+            {
+                question: "Dans quel contexte un réseau Pair-à-Pair (P2P) fonctionne-t-il sans avoir besoin d'un serveur central ?",
+                options: ["Réseau centralisé", "Réseau distribué", "Réseau P2P"],
+                reponse: "Réseau P2P"
+            },
+            {
+                question: "Quel avantage la décentralisation offre-t-elle en termes de transparence dans un réseau ?",
+                options: ["Dépendance totale des appareils", "Continuité du réseau malgré la défaillance d'un appareil", "Diminution de la capacité du réseau"],
+                reponse: "Diminution de la capacité du réseau"
+            },
+            {
+                question: "Comment la distribution des données se réinvente-t-elle dans le contexte d'un réseau P2P ?",
+                options: ["Distribution inégale du pouvoir", "Accessibilité égale des informations à tous les participants", "Restriction de l'accès aux informations"],
+                reponse: "Accessibilité égale des informations à tous les participants"
+            },
+            {
+                question: "Comment fonctionne le partage direct dans un réseau P2P ?",
+                options: ["Chaque appareil peut partager directement avec d'autres appareils", "En demandant à un grand magasin", "A travers un serveur central"],
+                reponse: "Chaque appareil peut partager directement avec d'autres appareils"
+            },
+            {
+                question: "Qu'est-ce que le consensus dans un système distribué garantit-il ?",
+                options: ["La concentration des décisions", "La dépendance à une autorité centrale", "L'accord collectif sur l'état du système"],
+                reponse: "L'accord collectif sur l'état du système"
+            },
+            {
+                question: "Comment le consensus prévient-il les fraudes dans un réseau décentralisé ?",
+                options: ["En facilitant la manipulation des données par un nœud malveillant", "En résistant aux attaques malveillantes", "En ignorant les décisions collectives"],
+                reponse: "En résistant aux attaques malveillantes"
+            },
+            {
+                question: "Quelle est la fonction de proposition dans le processus de consensus ?",
+                options: ["Soumission d'une action ou d'une mise à jour du système", "Vérification de la validité de la proposition", "Accord majoritaire sur la proposition"],
+                reponse: "Soumission d'une action ou d'une mise à jour du système"
+            },
+            {
+                question: "Pourquoi la distribution des décisions dans la décentralisation rend-elle plus difficile pour les acteurs malveillants de compromettre le système ?",
+                options: ["Facilité d'atteinte de l'autorité centrale", "Distribution inégale du pouvoir", "Résistance aux attaques malveillantes"],
+                reponse: "Océan Pacifique"
+            }
+        ];
+
+        // Initialiser le score
+        var score = 0;
+
+        // Index pour suivre l'ordre des questions mélangées
+        var indexQuestion = 0;
+
+        // Fonction pour tirer un nombre aléatoire entre min et max inclus
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Fonction pour mélanger les questions de manière aléatoire
+        function melangerQuestions(questions) {
+            for (var i = questions.length - 1; i > 0; i--) {
+                var j = getRandomNumber(0, i);
+                var temp = questions[i];
+                questions[i] = questions[j];
+                questions[j] = temp;
+            }
+            return questions;
+        }
+
+        // Mélanger les questions
+        var questionsMelangees = melangerQuestions(questions);
+
+        // Fonction pour afficher la question suivante
+        function afficherQuestionSuivante() {
+            verifierReponse();
+
+            if (indexQuestion < questionsMelangees.length) {
+                var questionActuelle = questionsMelangees[indexQuestion];
+                var htmlQuestion = "<p>Question " + (indexQuestion + 1) + ": " + questionActuelle.question + "</p>";
+
+                // Ajouter les options avec des boutons radio
+                for (var i = 0; i < questionActuelle.options.length; i++) {
+                    htmlQuestion += "<label><input type='radio' name='reponse' value='" + questionActuelle.options[i] + "'> " + questionActuelle.options[i] + "</label><br>";
+                }
+
+                // Afficher la question et les options
+                document.getElementById("questionContainer").innerHTML = htmlQuestion;
+                indexQuestion++;
+            } else {
+                // Afficher la fin du quiz
+                document.getElementById("questionContainer").innerHTML = "<p>Fin du quiz.</p>";
+                // Afficher le score
+                document.getElementById("score").innerHTML = "Score : " + score + " sur " + questions.length;
+            }
+        }
+
+        // Fonction pour vérifier la réponse et mettre à jour le score
+        function verifierReponse() {
+            var reponseUtilisateur = document.querySelector('input[name="reponse"]:checked');
+            if (reponseUtilisateur) {
+                var reponse = reponseUtilisateur.value;
+                var questionActuelle = questionsMelangees[indexQuestion - 1];
+
+                // Comparer la réponse utilisateur avec la réponse correcte
+                if (reponse === questionActuelle.reponse) {
+                    score++;
+                }
+
+                // Mettre à jour l'affichage du score
+                document.getElementById("score").innerHTML = "Score : " + score;
+            }
+        }
+
+        // Appeler la fonction pour afficher la première question
+        afficherQuestionSuivante();
+    </script>
+    
+
+
+
+
+    <!-- Bannière principale -->
+  <header>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="headerVideo">
+        <source src="animationSLT.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay text-center">
+       
+        <a href="#" class="btn btn-primary">Rejoignez-nous</a>
+    </div>
+</header>
+
+
+
+
+
+<!--Boutton qui revient a la page précedente-->
+    <a href="pagevierge.html">
+<button id="#button-Next">Revenir à la page précedente</button>
+    </a>
+<!--Boutton qui revient a la page précedente-->   
+
+
+
+
+  <!-- Page Content -->
+<div class="container">
+
+ c'est ici que e contenu de votre page
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<!-- /.container -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Pied de page -->
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>&copy; 2023 SUR LE TAS. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Inclure Bootstrap JS et jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+
+
+</body>
+
+</html>
